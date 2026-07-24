@@ -165,6 +165,41 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         ],
       },
+      campeonato: {
+        title: "Álbum: Campeonato Mundial de Xadrez",
+        photos: [
+          {
+            src: "foto_torneio4.jpg",
+            fallback:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCgr5sWLRKVsdG-ZJXqHsccXm-oMfM8YaRNMIeEXz1kpswDFNBqrdw9l8&s=10",
+            caption: "Campeonato Mundial de Xadrez - Nepo x Carlsen",
+          },
+          {
+            src: "foto_torneio4.jpg",
+            fallback:
+              "https://images.chesscomfiles.com/uploads/v1/news/1018003.a30e752f.5000x5000o.01120a0563e9.png",
+            caption: "Vacilo de Nepo na 8ª partida do match",
+          },
+          {
+            src: "foto_torneio4.jpg",
+            fallback:
+              "https://images.chesscomfiles.com/uploads/v1/news/1017461.e17658fd.668x375o.eb0ffa5b59b3@2x.png",
+            caption: "Carlsen vence a 6ª partida do match",
+          },
+          {
+            src: "foto_torneio4.jpg",
+            fallback:
+              "https://conteudo.imguol.com.br/c/esporte/3a/2021/11/25/o-russo-ian-nepomniachtchi-e-o-noruegues-magnus-carlsen-na-abertura-do-mundial-de-xadrez-1637883409486_v2_900x506.jpg",
+            caption: "Campeonato Mundial de Xadrez - Início do match em Dubai",
+          },
+          {
+            src: "logo.png",
+            fallback:
+              "https://rafaelleitao.com/wp-content/uploads/2021/12/3bba07f7-0a74-435e-9a8f-ca4bd8a641bc_Untitled.jpg",
+            caption: "Clube de Xadrez Jaíba acompanha o Mundial de Xadrez 2021",
+          },
+        ],
+      },
     };
 
     const currentAlbum = albums[albumType] || albums["torneio"];
