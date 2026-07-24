@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos os Eventos - Clube de Xadrez Jaíba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-brand">
+                <img src="logo.png" alt="Logo Clube de Xadrez Jaíba" class="logo-img">
+                <div class="brand-text">
+                    <span class="title">Clube de Xadrez</span>
+                    <span class="subtitle">Jaíba - MG</span>
+                </div>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Início</a>
+                <a href="index.html#noticias">Notícias</a>
+                <a href="eventos.html" class="active">Eventos</a>
+                <a href="index.html#galeria">Galeria</a>
+                <a href="contato.html" class="btn-primary">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Todos os Eventos</h2>
+            <p class="section-subtitle-text">Selecione um evento para visualizar as fotos no álbum correspondente:</p>
+
+            <div class="events-grid">
+                <!-- Evento 1 -->
+                <div class="event-card">
+                    <div class="event-thumb">
+                        <img src="foto1.jpg" alt="Torneio Regional" onerror="this.src='https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="event-info">
+                        <span class="event-date"><i class="far fa-calendar-alt"></i> Julho 2026</span>
+                        <h3>Torneio Regional de Jaíba</h3>
+                        <p>Partidas decisivas, mesas finais e premiação dos grandes vencedores da região.</p>
+                        <a href="album.html?album=torneio" class="btn-primary"><i class="fas fa-images"></i> Ver Álbum</a>
+                    </div>
+                </div>
+
+                <!-- Evento 2 -->
+                <div class="event-card">
+                    <div class="event-thumb">
+                        <img src="foto2.jpg" alt="Treinos e Oficinas" onerror="this.src='https://images.unsplash.com/photo-1586165368502-1bad197a6461?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="event-info">
+                        <span class="event-date"><i class="far fa-calendar-alt"></i> Junho 2026</span>
+                        <h3>Treinos e Oficinas de Iniciação</h3>
+                        <p>Oficinas abertas ao público para aprendizado e aperfeiçoamento tático no xadrez.</p>
+                        <a href="album.html?album=treino" class="btn-primary"><i class="fas fa-images"></i> Ver Álbum</a>
+                    </div>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="event-card">
+                    <div class="event-thumb">
+                        <img src="foto3.jpg" alt="Partidas Amistosas" onerror="this.src='https://images.unsplash.com/photo-1560174038-da43ac74f01b?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="event-info">
+                        <span class="event-date"><i class="far fa-calendar-alt"></i> Maio 2026</span>
+                        <h3>Encontro de Partidas Amistosas</h3>
+                        <p>Encontro de confraternização dos enxadristas locais com torneios rápidos e blitz.</p>
+                        <a href="album.html?album=amistosos" class="btn-primary"><i class="fas fa-images"></i> Ver Álbum</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="index.html" class="btn-secondary-dark"><i class="fas fa-arrow-left"></i> Voltar para a Página Inicial</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Clube de Xadrez Jaíba. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i> Instagram Oficial
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

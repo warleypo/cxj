@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Clube de Xadrez Jaíba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-brand">
+                <img src="logo.png" alt="Logo Clube de Xadrez Jaíba" class="logo-img">
+                <div class="brand-text">
+                    <span class="title">Clube de Xadrez</span>
+                    <span class="subtitle">Jaíba - MG</span>
+                </div>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Início</a>
+                <a href="index.html#horarios">Horários</a>
+                <a href="index.html#galeria">Galeria</a>
+                <a href="contato.html" class="active btn-primary">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container contact-wrapper">
+            <div class="contact-info">
+                <h2>Fale Conosco</h2>
+                <p>Tem dúvidas, quer se associar ou participar dos nossos torneios? Envie uma mensagem para nossa diretoria.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>E-mail de Destino:</strong>
+                        <p>admin@email.prov.br</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-instagram"></i>
+                    <div>
+                        <strong>Instagram:</strong>
+                        <p><a href="https://www.instagram.com/" target="_blank" rel="noopener">@clubedexadrezjaiba</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contato">E-mail ou Telefone *</label>
+                    <input type="text" id="contato" name="contato" placeholder="Seu e-mail ou WhatsApp" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem *</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Enviar por E-mail
+                </button>
+                <div id="formFeedback" class="form-feedback"></div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Clube de Xadrez Jaíba. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

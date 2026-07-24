@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Administrativo - Clube de Xadrez Jaíba</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Estilos do Painel Admin */
+      .admin-tabs {
+        display: flex;
+        gap: 10px;
+        border-bottom: 2px solid #e2e8f0;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        padding: 10px 20px;
+        border: none;
+        background: none;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      .tab-btn.active {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .tab-content {
+        display: none;
+        background: var(--white);
+        padding: 25px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        border: 1px solid #e2e8f0;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: var(--primary);
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: var(--border-radius);
+        font-size: 0.95rem;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .admin-list {
+        margin-top: 25px;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 15px;
+      }
+
+      .admin-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        background: var(--bg-light);
+        border-radius: var(--border-radius);
+        margin-bottom: 10px;
+        border: 1px solid #e2e8f0;
+      }
+
+      .btn-danger {
+        background-color: #ef4444;
+        color: var(--white);
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo-brand">
+          <img
+            src="logo.png"
+            alt="Logo Clube de Xadrez Jaíba"
+            class="logo-img"
+          />
+          <div class="brand-text">
+            <span class="title">Clube de Xadrez</span>
+            <span class="subtitle">Painel de Gerenciamento</span>
+          </div>
+        </a>
+        <a href="index.html" class="btn-secondary-dark"
+          ><i class="fas fa-external-link-alt"></i> Ver Site</a
+        >
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="fas fa-user-cog"></i> Painel Administrativo
+        </h2>
+        <p class="section-subtitle-text">
+          Gerencie o conteúdo do site em tempo real.
+        </p>
+
+        <!-- Abas do Painel -->
+        <div class="admin-tabs">
+          <button
+            class="tab-btn active"
+            onclick="openTab(event, 'tab-horarios')"
+          >
+            <i class="fas fa-clock"></i> Horário de Funcionamento
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab-noticias')">
+            <i class="fas fa-newspaper"></i> Notícias
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab-eventos')">
+            <i class="fas fa-calendar-alt"></i> Eventos
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab-galeria')">
+            <i class="fas fa-images"></i> Galeria de Fotos
+          </button>
+        </div>
+
+        <!-- Aba 1: Horários -->
+        <div id="tab-horarios" class="tab-content active">
+          <h3>Atualizar Horários de Funcionamento</h3>
+          <form id="form-horarios" style="margin-top: 15px">
+            <div class="form-group">
+              <label for="horario-semana"
+                >Dias de Semana (Segunda a Sexta):</label
+              >
+              <input
+                type="text"
+                id="horario-semana"
+                placeholder="Ex: 14:00 às 21:00"
+              />
+            </div>
+            <div class="form-group">
+              <label for="horario-sabado">Sábados:</label>
+              <input
+                type="text"
+                id="horario-sabado"
+                placeholder="Ex: 08:00 às 17:00"
+              />
+            </div>
+            <div class="form-group">
+              <label for="horario-domingo">Domingos e Feriados:</label>
+              <input
+                type="text"
+                id="horario-domingo"
+                placeholder="Ex: Fechado ou 08:00 às 12:00"
+              />
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-save"></i> Salvar Horários
+            </button>
+          </form>
+        </div>
+
+        <!-- Aba 2: Notícias -->
+        <div id="tab-noticias" class="tab-content">
+          <h3>Cadastrar Nova Notícia</h3>
+          <form id="form-noticias" style="margin-top: 15px">
+            <div class="form-group">
+              <label for="noticia-titulo">Título da Notícia:</label>
+              <input type="text" id="noticia-titulo" required />
+            </div>
+            <div class="form-group">
+              <label for="noticia-data">Data de Publicação:</label>
+              <input type="date" id="noticia-data" required />
+            </div>
+            <div class="form-group">
+              <label for="noticia-resumo">Resumo/Conteúdo:</label>
+              <textarea id="noticia-resumo" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-plus-circle"></i> Adicionar Notícia
+            </button>
+          </form>
+
+          <div class="admin-list">
+            <h4>Notícias Cadastradas</h4>
+            <div id="lista-noticias"></div>
+          </div>
+        </div>
+
+        <!-- Aba 3: Eventos -->
+        <div id="tab-eventos" class="tab-content">
+          <h3>Cadastrar Novo Evento</h3>
+          <form id="form-eventos" style="margin-top: 15px">
+            <div class="form-group">
+              <label for="evento-titulo">Nome do Evento:</label>
+              <input type="text" id="evento-titulo" required />
+            </div>
+            <div class="form-group">
+              <label for="evento-data">Data / Mês do Evento:</label>
+              <input
+                type="text"
+                id="evento-data"
+                placeholder="Ex: Julho 2026"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="evento-slug">Identificador do Álbum (Slug):</label>
+              <input
+                type="text"
+                id="evento-slug"
+                placeholder="Ex: torneio, treino, amistosos"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="evento-descricao">Descrição Curta:</label>
+              <textarea id="evento-descricao" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-plus-circle"></i> Adicionar Evento
+            </button>
+          </form>
+
+          <div class="admin-list">
+            <h4>Eventos Cadastrados</h4>
+            <div id="lista-eventos"></div>
+          </div>
+        </div>
+
+        <!-- Aba 4: Galeria -->
+        <div id="tab-galeria" class="tab-content">
+          <h3>Adicionar Imagem à Galeria / Álbum</h3>
+          <form id="form-galeria" style="margin-top: 15px">
+            <div class="form-group">
+              <label for="galeria-album">Vincular ao Álbum:</label>
+              <select id="galeria-album" required>
+                <option value="torneio">Torneio Regional</option>
+                <option value="treino">Treinos e Oficinas</option>
+                <option value="amistosos">Partidas Amistosas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="galeria-url"
+                >URL da Imagem ou Nome do Arquivo Local:</label
+              >
+              <input
+                type="text"
+                id="galeria-url"
+                placeholder="Ex: foto1.jpg ou https://..."
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="galeria-legenda">Legenda da Foto:</label>
+              <input
+                type="text"
+                id="galeria-legenda"
+                placeholder="Ex: Mês 1 - Partida Final"
+              />
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-upload"></i> Adicionar à Galeria
+            </button>
+          </form>
+
+          <div class="admin-list">
+            <h4>Fotos Cadastradas</h4>
+            <div id="lista-galeria"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2026 Clube de Xadrez Jaíba. Painel de Controle.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+    <script>
+      // Função para alternar abas
+      function openTab(evt, tabName) {
+        const tabContents = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < tabContents.length; i++) {
+          tabContents[i].classList.remove("active");
+        }
+        const tabBtns = document.getElementsByClassName("tab-btn");
+        for (let i = 0; i < tabBtns.length; i++) {
+          tabBtns[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

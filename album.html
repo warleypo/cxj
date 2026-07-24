@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum do Evento - Clube de Xadrez Jaíba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-brand">
+                <img src="logo.png" alt="Logo Clube de Xadrez Jaíba" class="logo-img">
+                <div class="brand-text">
+                    <span class="title">Clube de Xadrez</span>
+                    <span class="subtitle">Jaíba - MG</span>
+                </div>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Início</a>
+                <a href="index.html#galeria">Galeria</a>
+                <a href="contato.html" class="btn-primary">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h2 class="section-title" id="albumTitle"><i class="fas fa-images"></i> Álbum do Evento</h2>
+            
+            <!-- Carrossel -->
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-slide" id="carouselSlide">
+                        <!-- Imagens inseridas via JS -->
+                    </div>
+                    <button class="carousel-prev" id="prevBtn" aria-label="Foto anterior"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-next" id="nextBtn" aria-label="Próxima foto"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-caption" id="carouselCaption">Legenda da Imagem</div>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+
+            <div class="news-actions" style="margin-top: 30px; text-align: center;">
+                <a href="index.html#galeria" class="btn-secondary-dark"><i class="fas fa-arrow-left"></i> Voltar para a Galeria</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Clube de Xadrez Jaíba. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

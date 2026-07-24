@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - Clube de Xadrez Jaíba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-brand">
+                <img src="logo.png" alt="Logo Clube de Xadrez Jaíba" class="logo-img">
+                <div class="brand-text">
+                    <span class="title">Clube de Xadrez</span>
+                    <span class="subtitle">Jaíba - MG</span>
+                </div>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Início</a>
+                <a href="index.html#noticias">Notícias</a>
+                <a href="index.html#galeria">Galeria</a>
+                <a href="contato.html" class="btn-primary">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container single-post-container" id="newsContent">
+            <!-- Conteúdo carregado via JavaScript dinamicamente baseado no parâmetro da URL -->
+            <div class="news-header">
+                <span class="news-date" id="newsDate">Carregando...</span>
+                <h1 id="newsTitle">Notícia do Clube de Xadrez Jaíba</h1>
+            </div>
+            <div class="news-body" id="newsBody">
+                <p>Carregando o conteúdo completo da notícia...</p>
+            </div>
+            <div class="news-actions">
+                <a href="index.html#noticias" class="btn-secondary-dark"><i class="fas fa-arrow-left"></i> Voltar para Início</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Clube de Xadrez Jaíba. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
